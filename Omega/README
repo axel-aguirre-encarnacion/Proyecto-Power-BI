@@ -51,18 +51,6 @@ El proyecto integra los contenidos vistos en clase y aplica prácticas por sesi�
 ### Sesión 7 Proyecto final
 - Integración de todos los entregables en el `.pbix` final y documentación asociada.
 
----
-
-## Entregables mínimos
-- **Archivo fuente** Excel o CSV con los datos originales.  
-- **Power BI** archivo `dashboard.pbix` con páginas que incluyan KPIs, serie temporal y segmentaciones.  
-- **Documentación** `README.md` (este archivo) y `docs/screenshots/` con al menos 3 capturas del dashboard.  
-- **Registro ETL** consultas M exportadas o pasos documentados de Power Query.  
-- **Medidas DAX** archivo `dax_measures.md` con fórmulas y explicación.  
-- **Insights** archivo `insights.md` con 3 conclusiones accionables para la gerencia comercial.
-
----
-
 ## Ejemplos de medidas DAX básicas
 ```DAX
 TotalVentas = SUM('Ventas'[Monto])
