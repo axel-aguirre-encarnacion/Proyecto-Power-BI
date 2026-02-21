@@ -1,1 +1,74 @@
-Readme
+# Morris Solutions S.A. — Proyecto Power BI
+
+**Resumen**  
+Proyecto práctico para resolver la falta de información en la gerencia comercial de **Morris Solutions S.A.** mediante un dashboard operativo en Power BI. El objetivo es conocer y entender la data disponible, validar su calidad, modelarla y construir visuales que permitan a la gerencia tomar decisiones informadas.
+
+---
+
+## Objetivo del proyecto
+**Conocer y entender la data designada para el análisis** y construir un dashboard operativo en Power BI que responda a los requerimientos del gerente comercial: visibilidad de actividades de ventas, calidad de datos y métricas clave para la gestión.
+
+---
+
+## Actividades principales
+- **Actividad 1** Identificar y entender el requerimiento de análisis del gerente comercial.  
+- **Actividad 2** Validar las tablas de datos, detectar y corregir errores (consistencia, tipos, duplicados).  
+- **Actividad 3** Cargar los datos a Power BI y preparar el dataset para análisis (Power Query / ETL).
+
+---
+
+## Mapeo con el temario del curso
+El proyecto integra los contenidos vistos en clase y aplica prácticas por sesión:
+
+### Sesión 1 Conexión y actualización
+- Conectar orígenes de datos (Excel, CSV, bases de datos).  
+- Configurar actualización y comprobar la carga inicial.
+
+### Sesión 2 Preparación y transformación de datos
+- Uso de Power Query para limpieza, transformación y agregación.  
+- Registrar pasos M y garantizar reproducibilidad.  
+- Ejercicios de selección, transformación y agregación de información.
+
+### Sesión 3 Modelado de indicadores con DAX
+- Diseño del modelo dimensional: tablas de hechos y dimensiones.  
+- Definición de relaciones, cardinalidad y dirección de filtrado.  
+- Consideración de tablas puente y jerarquías.
+
+### Sesión 4 Gestión de indicadores con DAX
+- Creación de medidas, columnas y tablas calculadas.  
+- Implementación de Time Intelligence (YTD, MTD, periodos anteriores).  
+- Uso de operadores y funciones DAX aplicadas a métricas de ventas.
+
+### Sesión 5 Visualización de datos en Dashboard
+- Diseño de páginas de informe, selección de visuales según mensaje.  
+- Implementación de KPIs, series temporales, slicers, tooltips, bookmarks y drilldown.  
+- Buenas prácticas de formato y experiencia de usuario.
+
+### Sesión 6 Análisis e interpretación de datos
+- Elaboración de insights accionables y recomendaciones para la gerencia.  
+- Preparación de un informe ejecutivo y material de presentación.
+
+### Sesión 7 Proyecto final
+- Integración de todos los entregables en el `.pbix` final y documentación asociada.
+
+---
+
+## Entregables mínimos
+- **Archivo fuente** Excel o CSV con los datos originales.  
+- **Power BI** archivo `dashboard.pbix` con páginas que incluyan KPIs, serie temporal y segmentaciones.  
+- **Documentación** `README.md` (este archivo) y `docs/screenshots/` con al menos 3 capturas del dashboard.  
+- **Registro ETL** consultas M exportadas o pasos documentados de Power Query.  
+- **Medidas DAX** archivo `dax_measures.md` con fórmulas y explicación.  
+- **Insights** archivo `insights.md` con 3 conclusiones accionables para la gerencia comercial.
+
+---
+
+## Ejemplos de medidas DAX básicas
+```DAX
+TotalVentas = SUM('Ventas'[Monto])
+
+TotalTransacciones = COUNTROWS('Ventas')
+
+TasaConversion = DIVIDE([TotalTransacciones], DISTINCTCOUNT('Leads'[LeadID]), 0)
+
+PromedioTicket = DIVIDE([TotalVentas], [TotalTransacciones], 0)
